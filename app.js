@@ -511,6 +511,16 @@ function initApp() {
     showSection(sections.landing);
   });
 
+  navLogoBtn.addEventListener('dblclick', (e) => {
+    e.preventDefault();
+    if (isAdminAuthenticated) {
+      showSection(sections.adminDashboard);
+      loadAdminData();
+    } else {
+      showSection(sections.adminLogin);
+    }
+  });
+
   if (navbarRequestBtn) {
     navbarRequestBtn.addEventListener('click', () => {
       initiateProjectRequestFlow();
