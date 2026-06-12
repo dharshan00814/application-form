@@ -526,10 +526,12 @@ function initApp() {
     initiateApplicationFlow();
   });
 
-  heroJoinBtn.addEventListener('click', () => {
-    const el = document.getElementById('positions');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  });
+  if (heroJoinBtn) {
+    heroJoinBtn.addEventListener('click', () => {
+      const el = document.getElementById('positions');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
 
   // Handle clicking "Apply Now" directly from Position items
   document.querySelectorAll('.position-item').forEach(item => {
